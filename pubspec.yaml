@@ -1,0 +1,5 @@
+name:  optionsfile
+description:  Read options files
+dependencies: 
+  unittest: { sdk: unittest }
+
