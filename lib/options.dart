@@ -8,8 +8,9 @@ import 'dart:math';
  *   name=James
  *   age=9
  *   height=256
- * Note that everything on the left of the equals sign is the key, and everything on the right is the value. No stripping
- * of spaces is performed. Any line which starts with a hash (#) is ignored.
+ * The key on the left of the equals sign (=) is trimmed, but the value to the right of the equals sign is
+ * not trimmed - the user must trim spaces. Any line which starts with a hash (#) is ignored.
+ * Any line which does not contain an equals sign is ignored.
  */
 class OptionsFile {
   Map<String, String> _map;
@@ -33,9 +34,11 @@ class OptionsFile {
       for (var line in lines) {
         if (!line.startsWith('#')) {
           var i = line.indexOf('=');
-          var name = line.substring(0, i);
-          var value = line.substring(i + 1);
-          _map[name] = value;
+          if (i > -1) {
+            var name = line.substring(0, i).trim();
+            var value = line.substring(i + 1);
+            _map[name] = value;
+          }
         }
       }
     } else {
