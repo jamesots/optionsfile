@@ -53,7 +53,7 @@ class OptionsFile {
     if (value == null) {
       return defaultValue;
     }
-    return parseInt(value);
+    return int.parse(value);
   }
   
   String getString(String key, [String defaultValue]) {
