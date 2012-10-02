@@ -1,9 +1,9 @@
-#library('unittests');
+library unittests;
 
-#import('package:unittest/unittest.dart');
-#import('package:optionsfile/options.dart');
+import 'package:unittest/unittest.dart';
+import 'package:optionsfile/options.dart';
 
-#import('dart:io');
+import 'dart:io';
 
 class FileIOExceptionMatcher extends BaseMatcher {
   const FileIOExceptionMatcher();
