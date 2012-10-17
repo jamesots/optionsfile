@@ -1,7 +1,7 @@
 library unittests;
 
 import 'package:unittest/unittest.dart';
-import 'package:optionsfile/options.dart';
+import 'package:options_file/options_file.dart';
 
 import 'dart:io';
 

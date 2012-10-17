@@ -1,5 +1,5 @@
-name: optionsfile
-version: 0.9.1
+name: options_file
+version: 0.9.2
 description: Read options files
 author: James Ots <code@jamesots.com>
 homepage: https://github.com/jamesots/optionsfile

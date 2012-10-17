@@ -1,4 +1,4 @@
-import 'package:optionsfile/options.dart';
+import 'package:options_file/options_file.dart';
 
 void main() {
   OptionsFile options = new OptionsFile('example/local.options', 'example/default.options');
