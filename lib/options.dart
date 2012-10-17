@@ -5,11 +5,12 @@ import 'dart:math';
 
 /**
  * [OptionsFile] reads options from a file. The options must be stored in name=value pairs, one pair per line. E.g.:
- *   name=James
- *   age=9
- *   height=256
- * The key on the left of the equals sign (=) is trimmed, but the value to the right of the equals sign is
- * not trimmed - the user must trim spaces. Any line which starts with a hash (#) is ignored.
+ * 
+ *     name=James
+ *     age=9
+ *     height=256
+ *     
+ * Spaces around the key and value are trimmed. Any line which starts with a hash (#) is ignored.
  * Any line which does not contain an equals sign is ignored.
  */
 class OptionsFile {
@@ -36,7 +37,7 @@ class OptionsFile {
           var i = line.indexOf('=');
           if (i > -1) {
             var name = line.substring(0, i).trim();
-            var value = line.substring(i + 1);
+            var value = line.substring(i + 1).trim();
             _map[name] = value;
           }
         }
@@ -46,8 +47,19 @@ class OptionsFile {
     }
   }
   
+  /**
+   * Get a string value from the options file. If the value is not found in the file,
+   * null is returned.
+   */
   String operator[](String key) => _map[key];
   
+  /**
+   * Get an integer value from the options file. If the given [key] is not found in the 
+   * options file or the default options file, the [defaultValue] is returned if specified, 
+   * or null if it is not specified.
+   * 
+   * Throws a [FormatException] if the value is not a valid integer literal.
+   */
   int getInt(String key, [int defaultValue]) {
     var value = _map[key];
     if (value == null) {
@@ -56,6 +68,11 @@ class OptionsFile {
     return int.parse(value);
   }
   
+  /**
+   * Get a string value from the options file. If the given [key] is not found in the 
+   * options file or the default options file, the [defaultValue] is returned if specified, 
+   * or null if it is not specified.
+   */
   String getString(String key, [String defaultValue]) {
     var value = _map[key];
     if (value != null) {

@@ -43,6 +43,12 @@ void main() {
     expect("James", name);
   });
   
+  test('Should ignore space around values', () {
+    var options = new OptionsFile('test/options');
+    var name = options.getString("name3");
+    expect("James", name);
+  });
+  
   test('Should read int value', () {
     var options = new OptionsFile('test/options');
     var age = options.getInt("age");
