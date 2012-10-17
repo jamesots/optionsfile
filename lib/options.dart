@@ -17,7 +17,9 @@ class OptionsFile {
   Map<String, String> _map;
   
   /**
-   * Load options from the file called [filename], with defaults in the [defaults] file.
+   * Load options from the file called [filename], with defaults in the [defaults] file if specified.
+   * 
+   * Throws [FileIOException] if either file specified does not exist. 
    */
   OptionsFile(String filename, [String defaults]) {
     _map = <String>{};
