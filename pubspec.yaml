@@ -4,5 +4,4 @@ description: Read options files
 author: James Ots <code@jamesots.com>
 homepage: https://github.com/jamesots/optionsfile
 dependencies: 
-  unittest:
-    sdk: unittest
+  unittest: any
