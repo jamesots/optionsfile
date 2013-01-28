@@ -22,7 +22,7 @@ class OptionsFile {
    * Throws [FileIOException] if either file specified does not exist. 
    */
   OptionsFile(String filename, [String defaults]) {
-    _map = <String>{};
+    _map = <String, String>{};
     if (?defaults) {
       var defaultOptions = new File(defaults);
       _readOptions(defaultOptions);
