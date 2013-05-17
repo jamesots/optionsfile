@@ -23,7 +23,7 @@ class OptionsFile {
    */
   OptionsFile(String filename, [String defaults]) {
     _map = <String, String>{};
-    if (?defaults) {
+    if (defaults != null) {
       var defaultOptions = new File(defaults);
       _readOptions(defaultOptions);
     }
