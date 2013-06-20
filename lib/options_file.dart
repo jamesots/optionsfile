@@ -45,7 +45,7 @@ class OptionsFile {
         }
       }
     } else {
-      throw new FileIOException("File not found: ${options.path}");
+      throw new FileException("File not found: ${options.path}");
     }
   }
   

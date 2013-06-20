@@ -8,13 +8,13 @@ import 'dart:io';
 class FileIOExceptionMatcher extends BaseMatcher {
   const FileIOExceptionMatcher();
   Description describe(Description description) => description.add("FileIOException");
-  bool matches(item, MatchState matchState) => item is FileIOException;  
+  bool matches(item, Map matchState) => item is FileException;  
 }
 
 class FormatExceptionMatcher extends BaseMatcher {
   const FormatExceptionMatcher();
   Description describe(Description description) => description.add("FormatException");
-  bool matches(item, MatchState matchState) => item is FormatException;  
+  bool matches(item, Map matchState) => item is FormatException;  
 }
 
 void main() {
