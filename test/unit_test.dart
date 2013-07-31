@@ -5,13 +5,13 @@ import 'package:options_file/options_file.dart';
 
 import 'dart:io';
 
-class FileIOExceptionMatcher extends BaseMatcher {
+class FileIOExceptionMatcher extends Matcher {
   const FileIOExceptionMatcher();
   Description describe(Description description) => description.add("FileIOException");
   bool matches(item, Map matchState) => item is FileException;  
 }
 
-class FormatExceptionMatcher extends BaseMatcher {
+class FormatExceptionMatcher extends Matcher {
   const FormatExceptionMatcher();
   Description describe(Description description) => description.add("FormatException");
   bool matches(item, Map matchState) => item is FormatException;  
