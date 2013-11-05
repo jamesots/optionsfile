@@ -8,7 +8,7 @@ import 'dart:io';
 class FileIOExceptionMatcher extends Matcher {
   const FileIOExceptionMatcher();
   Description describe(Description description) => description.add("FileIOException");
-  bool matches(item, Map matchState) => item is FileException;  
+  bool matches(item, Map matchState) => item is FileSystemException;  
 }
 
 class FormatExceptionMatcher extends Matcher {

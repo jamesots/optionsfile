@@ -1,7 +1,6 @@
 library options_file;
 
 import 'dart:io';
-import 'dart:math';
 
 /**
  * [OptionsFile] reads options from a file. The options must be stored in name=value pairs, one pair per line. E.g.:
@@ -45,7 +44,7 @@ class OptionsFile {
         }
       }
     } else {
-      throw new FileException("File not found: ${options.path}");
+      throw new FileSystemException("File not found", options.path);
     }
   }
   
